@@ -16,6 +16,7 @@
   --main-color: #00ffee;
 }
 
+
 html {
   font-size: 60%;
   overflow-x: hidden;
@@ -464,6 +465,322 @@ span {
   margin: auto;
 }
 
+/* General container styling */
+section#skills {
+  background-color: var(--secound-bg-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.container1 {
+  flex: 1;
+  /* Makes both containers flexible */
+  min-width: 300px;
+  /* Prevents containers from becoming too narrow */
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Heading styling */
+.heading1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  margin-bottom: 50px;
+  /* color: #333; */
+  text-align: center;
+}
+
+.bar {
+  font-size: 23px;
+}
+
+/* Technical Skills container */
+.Technical-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Technical-bars .bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Technical-bars .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* progressline text */
+.info span {
+  color: rgb(66, 233, 233);
+}
+
+.Technical-bars .progress-line {
+  width: 100%;
+  height: 10px;
+  background: #334158;
+  border-radius: 5px;
+  position: relative;
+  /* overflow: hidden; */
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.Technical-bars .progress-line span {
+  display: block;
+  height: 100%;
+  background: #0ef;
+  position: absolute;
+  /* Progress color */
+  border-radius: 10px;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.Technical-bars .html span {
+  width: 90%;
+  /* Example percentage */
+}
+
+.Technical-bars .css span {
+  width: 80%;
+}
+
+.Technical-bars .javascript span {
+  width: 75%;
+}
+
+.Technical-bars .react span {
+  width: 80%;
+}
+
+.Technical-bars .NodeJS span {
+  width: 85%;
+}
+
+
+.progress-line span::after {
+  position: absolute;
+  padding: 1px 8px;
+  background-color: #334158;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  top: -28px;
+  right: -20px;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+
+.progress-line.html span::after {
+  content: "90%";
+}
+
+.progress-line.css span::after {
+  content: "80%";
+}
+
+.progress-line.javascript span::after {
+  content: "75%";
+}
+
+.progress-line.react span::after {
+  content: "80%";
+}
+
+.progress-line.NodeJS span::after {
+  content: "85%";
+}
+
+.progress-line span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000000;
+  top: -10px;
+  right: 0;
+  animation: showText .5s 1.5s linear forwards;
+  opacity: 0;
+}
+
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Professional Skills (radial bars styles) */
+.radial-bars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.radial-bar {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.radial-bar svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.radial-bar .track {
+  stroke-width: 10;
+  stroke: #334158;
+  fill: transparent;
+}
+
+.radial-bar .progress {
+  stroke-width: 10;
+  stroke: #0ef;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+}
+
+.path-1 {
+  animation: progress-1 1s ease-out forwards;
+}
+
+.path-2 {
+  animation: progress-2 1s ease-out forwards;
+}
+
+.path-3 {
+  animation: progress-3 1s ease-out forwards;
+}
+
+.path-4 {
+  animation: progress-4 1s ease-out forwards;
+}
+
+@keyframes progress-1 {
+  to {
+    stroke-dashoffset: 50;
+    /* 90% progress */
+  }
+}
+
+@keyframes progress-2 {
+  to {
+    stroke-dashoffset: 175;
+    /* 65% progress */
+  }
+}
+
+@keyframes progress-3 {
+  to {
+    stroke-dashoffset: 125;
+    /* 75% progress */
+  }
+}
+
+@keyframes progress-4 {
+  to {
+    stroke-dashoffset: 75;
+    /* 85% progress */
+  }
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(5, 238, 255);
+}
+
+.text {
+  position: absolute;
+  width: 100%;
+  bottom: -20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Responsive styling for mobile screens */
+@media screen and (max-width: 768px) {
+  section#skills {
+    flex-direction: column;
+    /* Stacks containers top-down */
+  }
+
+  .container1 {
+    margin-bottom: 20px;
+    /* Adds spacing between stacked containers */
+  }
+
+  .Technical-bars {
+    margin-left: 40px;
+    gap: 10px;
+    /* Adjusts gap for smaller screens */
+  }
+
+  .radial-bars {
+    gap: 15px;
+  }
+}
+
+
+/* @keyframes slideTop {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+
+
+
+
+
+
+
+
+/* 
 .testimonials {
   background: var(--secound-bg-color);
 }
@@ -529,7 +846,7 @@ span {
 #star {
   color: gold;
   font-size: 2rem;
-}
+} */
 
 .contact {
   background-color: var(--bg-color);
