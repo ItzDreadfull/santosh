@@ -432,6 +432,7 @@ span {
   width: 50px;
 }
 
+/* service section */
 .services {
   background: var(--bg-color);
   color: black;
@@ -526,8 +527,8 @@ span {
   padding: 8px 16px;
   border-radius: 12px;
   font-size: 1.2rem;
-  margin-top: 25px;
-  margin-left: 231px;
+  margin-top: 30px;
+  margin-left: 240px;
   cursor: pointer;
 }
 
@@ -614,7 +615,7 @@ section#skills {
   height: 100%;
   background: #0ef;
   position: absolute;
-  /* Progress color */
+  /* Progres color */
   border-radius: 10px;
   animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
   transform: scaleX(0);
@@ -627,24 +628,24 @@ section#skills {
   }
 }
 
-.Technical-bars .html span {
+.Technical-bars .Charts span {
   width: 90%;
   /* Example percentage */
 }
 
-.Technical-bars .css span {
+.Technical-bars .Market span {
+  width: 85%;
+}
+
+.Technical-bars .Excel span {
   width: 80%;
 }
 
-.Technical-bars .javascript span {
-  width: 75%;
+.Technical-bars .Portfolio span {
+  width: 95%;
 }
 
-.Technical-bars .react span {
-  width: 80%;
-}
-
-.Technical-bars .NodeJS span {
+.Technical-bars .Regulations span {
   width: 85%;
 }
 
@@ -662,23 +663,23 @@ section#skills {
   opacity: 0;
 }
 
-.progress-line.html span::after {
+.progress-line.Charts span::after {
   content: "90%";
 }
 
-.progress-line.css span::after {
+.progress-line.Market span::after {
+  content: "85%";
+}
+
+.progress-line.Excel span::after {
   content: "80%";
 }
 
-.progress-line.javascript span::after {
-  content: "75%";
+.progress-line.Portfolio span::after {
+  content: "95%";
 }
 
-.progress-line.react span::after {
-  content: "80%";
-}
-
-.progress-line.NodeJS span::after {
+.progress-line.Regulations span::after {
   content: "85%";
 }
 
@@ -943,7 +944,7 @@ section#skills {
 }
 
 @media (max-width: 1285px) {
-  html {
+  Charts {
     font-size: 55%;
   }
 
