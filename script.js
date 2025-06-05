@@ -21,30 +21,30 @@ window.onscroll = () => {
 }
 
 
-
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('fa-xmark');
     navbar.classList.toggle('active');
 }
 
-const themeIcon = document.getElementById('theme-icon');
 
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+//services popup model
+function openModal(id) {
+    document.getElementById(`modal-${id}`).style.display = "block";
 }
 
-// Load saved theme
-const savedTheme = localStorage.getItem('theme') || 'light';
-setTheme(savedTheme);
+function closeModal(id) {
+    document.getElementById(`modal-${id}`).style.display = "none";
+}
 
-// Toggle theme on icon click
-themeIcon.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme');
-    const newTheme = current === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-});
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+    const modals = document.querySelectorAll(".modal");
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
 
 
 document.getElementById("downloadPDF").addEventListener("click", () => {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -29,9 +29,9 @@
         <i class="fa-solid fa-bars" id="menu-icon"></i>
 
         <nav class="navbar">
-            <div class="theme-toggle">
+            <!-- <div class="theme-toggle">
                 <i class="fas fa-moon" id="theme-icon"></i>
-            </div>
+            </div> -->
             <a href="#home" class="active">Home</a>
             <a href="#education">Education</a>
             <a href="#services">Services</a>
@@ -87,11 +87,38 @@
                 </div>
 
                 <div class="timeline-item">
+                    <div class="timeline-dot"> </div>
+                    <div class="timeline-date">03 Sep 2008</div>
+                    <div class="timeline-content">
+                        <h3>Commodities Market Module</h3>
+                        <p>Commodities Market (Dealers) Module since September 3, 2008.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"> </div>
+                    <div class="timeline-date">05 Oct 2009</div>
+                    <div class="timeline-content">
+                        <h3>Derivatives Market Module</h3>
+                        <p>Derivatives Market (Dealers) Module since October 5, 2009.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">12 Jan 2011</div>
                     <div class="timeline-content">
                         <h3>NISM-Series-V-A</h3>
                         <p>Mutual Fund Distributors Certification Examination</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">04 Aug 2011</div>
+                    <div class="timeline-content">
+                        <h3>Capital Market Module</h3>
+                        <p>Capital Market (Dealers) Module since August 4, 2011.</p>
                     </div>
                 </div>
 
@@ -134,15 +161,15 @@
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Module Exams</div>
+                    <div class="timeline-date">25 Mar 2021</div>
                     <div class="timeline-content">
-                        <h3>Capital & Derivatives Market Modules</h3>
-                        <ul style="padding-left: 1.5rem; font-size: 1.6rem; line-height: 2;">
-                            <li><strong>Capital Market (Dealers) Module</strong> – 04-Aug-2011</li>
-                            <li><strong>Derivatives Market (Dealers) Module</strong> – 05-Oct-2009</li>
-                            <li><strong>Commodities Market Module</strong> – 03-Sep-2008</li>
-                            <li><strong>Capital Market (Dealers) Module</strong> – 09-Aug-2006</li>
-                        </ul>
+                        <h3>CFP Certification - Global Excellence in Financial Planning.</h3>
+                        <p>Having satisfied the education, examination, experience and ethics requirements for
+                            certification and having agreed to abide by the Code of Ethics and Professional
+                            Responsibility and Financial Planning Practice Standards is hereby authorized to use the
+                            CFPCM, CERTIFIED FINANCIAL PLANNERCM and the symbol in India, with all rights and privileges
+                            pertaining thereto and subject to periodic renewal requirements as established and amended
+                            from time to time.</p>
                     </div>
                 </div>
 
@@ -154,30 +181,177 @@
         <section class="services" id="services">
             <h2 class="heading">Services</h2>
             <div class="services-container">
+
+
+                <!-- Service Box -->
                 <div class="service-box">
                     <div class="service-info">
                         <h4>Equity Trading</h4>
-                        <p>Expert advice on stock market investments to help maximize your returns with calculated risk.
+                        <p>
+                            I am an Authorized Partner of Angel One, offering expert guidance and services in equity
+                            trading and investment strategies. Backed by one of India’s most trusted brokerage firms....
+                        </p>
+                    </div>
+                    <button class="read-more-btn" onclick="openModal('equity')">Read More</button>
+                </div>
+
+                <!-- Modal Popup for equity -->
+                <div class="modal" id="modal-equity">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('equity')">&times;</span>
+                        <h3>Equity Trading</h3>
+                        <p>
+                        <ul>
+                            <li> I am an Authorized Partner of Angel One, offering expert guidance and services in
+                                equity
+                                trading and investment strategies. Backed by one of India’s most trusted brokerage
+                                firms, I
+                                empower clients to navigate the stock market confidently—whether they are new investors
+                                or
+                                seasoned traders.</li><br>
+                            <li>
+                                With a strong understanding of market dynamics and real-time trading tools, I assist
+                                individuals in buying and selling equities, building long-term portfolios, and making
+                                informed, research-backed decisions. As your trusted partner, I provide personalized
+                                support, regular market insights, and access to Angel One’s cutting-edge platforms and
+                                research reports.</li><br>
+                            <li>
+                                Whether you're looking to grow your wealth through long-term investing or actively trade
+                                in
+                                the market.</li>
+                        </ul><br>
+                        I’m here to help you unlock the full potential of equity markets with trusted
+                        technology and professional expertise.
+
                         </p>
                     </div>
                 </div>
+
+
                 <div class="service-box">
                     <div class="service-info">
                         <h4>Mutual Funds</h4>
-                        <p>Get the best mutual fund recommendations tailored to your financial goals and risk appetite.
+                        <p>With a client-first approach, I provide end-to-end support—from goal planning and fund
+                            selection to portfolio tracking and periodic reviews. I work with leading Asset
+                            Management.....
+                        </p>
+
+                    </div>
+                    <button class="read-more-btn" onclick="openModal('Mutual')">Read More</button>
+                </div>
+                <!-- Modal Popup for Mutual fund -->
+                <div class="modal" id="modal-Mutual">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('Mutual')">&times;</span>
+                        <h3>Mutual Funds</h3><br>
+                        <p>
+                        <ul>
+                            <li> As a certified Mutual Fund Distributor, I help individuals and families navigate the
+                                world of
+                                investments with confidence and clarity. My mission is to make wealth creation
+                                accessible by
+                                offering well-researched mutual fund solutions tailored to each client's financial
+                                goals,
+                                risk profile, and investment horizon. </li><br>
+                            <li> With a client-first approach, I provide end-to-end support—from goal planning and fund
+                                selection to portfolio tracking and periodic reviews. I work with leading Asset
+                                Management
+                                Companies (AMCs) to offer a wide range of equity, debt, hybrid, and tax-saving mutual
+                                fund
+                                schemes.</li> <br>
+
+                            <li> Whether you're planning for retirement, a child’s education, wealth accumulation, or
+                                simply
+                                looking to grow your savings, I’m here to help you build a diversified and disciplined
+                                investment strategy.</li>
+                        </ul>
+                        <br>
+                        Your financial goals deserve personal attention and expert guidance—and that’s exactly what
+                        I deliver.
+
                         </p>
                     </div>
                 </div>
+
+
                 <div class="service-box">
                     <div class="service-info">
-                        <h4>IPO Investments</h4>
-                        <p>Stay ahead with early access to Initial Public Offerings and insightful IPO analysis.</p>
+                        <h4>Insurance</h4>
+
+                        <p>I specialize in helping individuals, families, and businesses protect what matters most. With
+                            a deep understanding of insurance products and a commitment to personalized service.....</p>
+                    </div>
+                    <button class="read-more-btn" onclick="openModal('Insurience')">Read More</button>
+                </div>
+                <!-- Modal Popup for Mutual fund -->
+                <div class="modal" id="modal-Insurience">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('Insurience')">&times;</span>
+                        <h3>Insurance</h3><br>
+                        <p>
+                        <ul>
+                            <li>
+                                As a dedicated and licensed insurance agent, I specialize in helping individuals,
+                                families,
+                                and businesses protect what matters most. With a deep understanding of insurance
+                                products
+                                and a commitment to personalized service, I guide my clients through the process of
+                                choosing
+                                the right coverage—whether it's life, health, auto, home, or commercial insurance
+
+                            </li><br>
+                            <li>
+                                I work closely with each client to assess their unique needs and provide tailored
+                                solutions that offer peace of mind and long-term financial security. Whether you’re
+                                looking
+                                for a new policy, need to update existing coverage, or require assistance with a
+                                claim.
+                            </li><br>
+                            <li> Whether you’re just starting to explore insurance options or seeking a trusted
+                                advisor for ongoing support, I’m here to help every step of the way.</li>
+                        </ul>
+                        <br>
+                        I’m here to make the process clear, straightforward, and stress-free.
+                        </p>
                     </div>
                 </div>
+
+
                 <div class="service-box">
                     <div class="service-info">
                         <h4>Portfolio Management</h4>
-                        <p>Structured portfolio solutions for consistent wealth building and long-term financial health.
+                        <p>As a trusted Portfolio Management Services distributor,I specialize in connecting
+                            high-net-worth individuals(HNIs) with...... </p>
+
+                    </div>
+                    <button class="read-more-btn" onclick="openModal('Portfolio')">Read More</button>
+                </div>
+                <!-- Modal Popup for Mutual fund -->
+                <div class="modal" id="modal-Portfolio">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal('Portfolio')">&times;</span>
+                        <h3>Portfolio Management</h3><br>
+                        <p>
+                        <ul>
+                            <li> As a trusted Portfolio Management Services (PMS) distributor, I specialize in
+                                connecting high-net-worth individuals (HNIs) with professionally managed investment
+                                portfolios tailored to their financial goals and risk appetite. With a strong foundation
+                                in financial markets and wealth management, I work closely with leading PMS providers to
+                                offer curated investment solutions that align with long-term wealth creation strategies.
+                            </li><br>
+                            <li> My role goes beyond product distribution—I act as a strategic advisor, helping clients
+                                understand various portfolio styles (such as multi-cap, focused, sectoral, or thematic
+                                strategies), assess performance metrics, and make informed decisions. I believe in
+                                maintaining transparency, offering regular updates, and fostering long-term
+                                relationships based on trust and performance.</li> <br>
+
+                            <li> Whether you're seeking growth, capital preservation, or diversification, I provide
+                                access to top-performing PMS offerings and ensure a seamless onboarding and monitoring
+                                experience.</li>
+                        </ul>
+                        <br>
+                        I’m here to make Your Invesment Journey easy and stress-free, and help you to building you good
+                        wealth.
                         </p>
                     </div>
                 </div>
