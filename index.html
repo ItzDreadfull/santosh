@@ -2,504 +2,850 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="profile.png">
 
     <link rel="stylesheet" href="style.css" />
 
-    <title>Santosh Show</title>
+    <title>Santosh Show - Your Trusted Financial Advisory Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
-<body>
+<body class="bg-gray-50">
     <!-- Header -->
-    <header class="header">
-        <a href="#home" class="logo">Santosh <span>Show</span></a>
+    <header id="header" class="fixed w-full top-0 z-50 glass-effect text-white transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">💼
+                    Santosh Show</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#services"
+                        class="hover:text-blue-200 transition-all duration-300 font-medium relative group">
+                        Services
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#about" class="hover:text-blue-200 transition-all duration-300 font-medium relative group">
+                        About
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#education"
+                        class="hover:text-blue-200 transition-all duration-300 font-medium relative group">
+                        Education
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#skills"
+                        class="hover:text-blue-200 transition-all duration-300 font-medium relative group">
+                        Skills
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact"
+                        class="hover:text-blue-200 transition-all duration-300 font-medium relative group">
+                        Contact
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle"
+                        class="p-2 rounded-lg glass-effect hover:bg-white/20 transition-all duration-300">
+                        <svg id="sunIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                        <svg id="moonIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
+                        </svg>
+                    </button>
+                    <button id="menuBtn" class="md:hidden p-2 rounded-lg glass-effect">
+                        <svg id="hamburgerIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu"
+                class="md:hidden fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out bg-slate-800">
+                <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-lg" id="mobileMenuOverlay"></div>
+                <div class="absolute right-0 top-0 h-full w-70 bg-slate-800 shadow-2xl">
+                    <div class="flex flex-col h-full">
 
-        <nav class="navbar">
-            <!-- <div class="theme-toggle">
-                <i class="fas fa-moon" id="theme-icon"></i>
-            </div> -->
-            <a href="#home" class="active">Home</a>
-            <a href="#education">Education</a>
-            <a href="#services">Services</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+                        <!-- Mobile Menu Header -->
+                        <div class="flex items-center justify-between pt-6 px-8  border-slate-500 gap-8">
+                            <div
+                                class="text-xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                                💼 Santosh Show</div>
+                            <button id="closeMobileMenu"
+                                class="p-2 rounded-lg glass-effect text-white hover:bg-white/20 transition-all duration-300">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Mobile Menu Links -->
+                        <nav class="flex-1 px-6 py-8 bg-slate-800 ">
+                            <div class="space-y-6">
+
+                                <a href="#services"
+                                    class="mobile-nav-link block text-white text-lg font-medium py-3 px-4 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-2xl">💼</span>
+                                        <span>Services</span>
+                                    </div>
+                                </a>
+
+                                <a href="#about"
+                                    class="mobile-nav-link block text-white text-lg font-medium py-3 px-4 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-2xl">👨‍💼</span>
+                                        <span>About</span>
+                                    </div>
+                                </a>
+                                <a href="#education"
+                                    class="mobile-nav-link block text-white text-lg font-medium py-3 px-4 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-2xl">🎓</span>
+                                        <span>Education</span>
+                                    </div>
+                                </a>
+                                <a href="#skills"
+                                    class="mobile-nav-link block text-white text-lg font-medium py-3 px-4 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-2xl">⚡</span>
+                                        <span>Skills</span>
+                                    </div>
+                                </a>
+                                <a href="#contact"
+                                    class="mobile-nav-link block text-white text-lg font-medium py-3 px-4 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:translate-x-2">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="text-2xl">📞</span>
+                                        <span>Contact</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <div id="pdfContent">
-        <!-- Home -->
-        <section class="home" id="home">
-            <div class="home-content">
-                <h1>Hi, It's <span>Santosh</span></h1>
-                <h3 class="text-animation">I'm a <span></span></h3>
-                <p>
-                    I'm a certified sub-broker helping individuals grow their wealth through smart investment
-                    strategies.
-                    With a client-first approach, I offer tailored guidance in equities, mutual funds, and portfolio
-                    planning.
-                </p>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-                <div class="btn-group">
-                    <!-- <button class="btn" id="downloadPDF">Download Profile as PDF</button> -->
-                    <a href="#" class="btn">Resume</a>
-                    <a href="#contact" class="btn">Contact</a>
-                </div>
-            </div>
-            <div class="home-img">
-                <img src="profile.png" alt="" />
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-left">
+                    <div
+                        class="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-medium mb-6 animate-fade-in">
+                        🏆 20+ Years Experience • CFP • CPFA • NISM Certified
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-black mb-6 animate-fade-in leading-tight">
+                        Empowering Financial
+                        <span
+                            class="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">Growth</span>
+                        with Insight
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in leading-relaxed">
+                        Certified Financial Planner™ • Investment Adviser • Equity Strategist • Portfolio Specialist
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in">
+                        <button onclick="scrollToSection('contact')"
+                            class="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 modern-shadow">
+                            Get Free Consultation
+                        </button>
+                        <button onclick="scrollToSection('services')"
+                            class="glass-effect px-8 py-4 rounded-2xl font-bold hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                            View Services
+                        </button>
+                    </div>
 
-        <!-- Education -->
-        <section class="education" id="education">
-            <h2 class="heading">Education & Certifications</h2>
-
-            <div class="timeline-items">
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"> </div>
-                    <div class="timeline-date">2002</div>
-                    <div class="timeline-content">
-                        <h3>B.Com (Tax Procedure & Practices)</h3>
-                        <p>Completed undergraduate degree with specialization in Tax Procedure & Practices.</p>
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-12 animate-fade-in">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-300">1000+</div>
+                            <div class="text-sm opacity-80">Happy Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-300">₹100Cr+</div>
+                            <div class="text-sm opacity-80">Assets Managed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-300">20+</div>
+                            <div class="text-sm opacity-80">Years Experience</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"> </div>
-                    <div class="timeline-date">03 Sep 2008</div>
-                    <div class="timeline-content">
-                        <h3>Commodities Market Module</h3>
-                        <p>Commodities Market (Dealers) Module since September 3, 2008.</p>
-                    </div>
-                </div>
+                <!-- Profile Image -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative floating-animation">
+                        <!-- Placeholder for your image - replace src with your actual image -->
+                        <img src="profile.png" alt="Financial Advisor Profile" class="profile-image object-cover">
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"> </div>
-                    <div class="timeline-date">05 Oct 2009</div>
-                    <div class="timeline-content">
-                        <h3>Derivatives Market Module</h3>
-                        <p>Derivatives Market (Dealers) Module since October 5, 2009.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">12 Jan 2011</div>
-                    <div class="timeline-content">
-                        <h3>NISM-Series-V-A</h3>
-                        <p>Mutual Fund Distributors Certification Examination</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">04 Aug 2011</div>
-                    <div class="timeline-content">
-                        <h3>Capital Market Module</h3>
-                        <p>Capital Market (Dealers) Module since August 4, 2011.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">26 Mar 2012</div>
-                    <div class="timeline-content">
-                        <h3>CPFA Certification</h3>
-                        <p>Certified Personal Financial Advisor (CPFA) Examination</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">02 Dec 2013</div>
-                    <div class="timeline-content">
-                        <h3>NISM-Series-I</h3>
-                        <p>Currency Derivatives Certification Examination<br><small><em>(Expired on
-                                    29-Nov-2022)</em></small></p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">22 Oct 2019</div>
-                    <div class="timeline-content">
-                        <h3>NISM-Series-X-A</h3>
-                        <p>Investment Adviser (Level 1) Certification Examination</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">26 Nov 2019</div>
-                    <div class="timeline-content">
-                        <h3>NISM-Series-X-B</h3>
-                        <p>Investment Adviser (Level 2) Certification Examination</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">25 Mar 2021</div>
-                    <div class="timeline-content">
-                        <h3>CFP Certification - Global Excellence in Financial Planning.</h3>
-                        <p>Having satisfied the education, examination, experience and ethics requirements for
-                            certification and having agreed to abide by the Code of Ethics and Professional
-                            Responsibility and Financial Planning Practice Standards is hereby authorized to use the
-                            CFPCM, CERTIFIED FINANCIAL PLANNERCM and the symbol in India, with all rights and privileges
-                            pertaining thereto and subject to periodic renewal requirements as established and amended
-                            from time to time.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- Services -->
-        <section class="services" id="services">
-            <h2 class="heading">Services</h2>
-            <div class="services-container">
-
-
-                <!-- Service Box -->
-                <div class="service-box">
-                    <div class="service-info">
-                        <h4>Equity Trading</h4>
-                        <p>
-                            I am an Authorized Partner of Angel One, offering expert guidance and services in equity
-                            trading and investment strategies. Backed by one of India’s most trusted brokerage firms....
-                        </p>
-                    </div>
-                    <button class="read-more-btn" onclick="openModal('equity')">Read More</button>
-                </div>
-
-                <!-- Modal Popup for equity -->
-                <div class="modal" id="modal-equity">
-                    <div class="modal-content">
-                        <span class="close-btn" onclick="closeModal('equity')">&times;</span>
-                        <h3>Equity Trading</h3>
-                        <p>
-                        <ul>
-                            <li> I am an Authorized Partner of Angel One, offering expert guidance and services in
-                                equity
-                                trading and investment strategies. Backed by one of India’s most trusted brokerage
-                                firms, I
-                                empower clients to navigate the stock market confidently—whether they are new investors
-                                or
-                                seasoned traders.</li><br>
-                            <li>
-                                With a strong understanding of market dynamics and real-time trading tools, I assist
-                                individuals in buying and selling equities, building long-term portfolios, and making
-                                informed, research-backed decisions. As your trusted partner, I provide personalized
-                                support, regular market insights, and access to Angel One’s cutting-edge platforms and
-                                research reports.</li><br>
-                            <li>
-                                Whether you're looking to grow your wealth through long-term investing or actively trade
-                                in
-                                the market.</li>
-                        </ul><br>
-                        I’m here to help you unlock the full potential of equity markets with trusted
-                        technology and professional expertise.
-
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="service-box">
-                    <div class="service-info">
-                        <h4>Mutual Funds</h4>
-                        <p>With a client-first approach, I provide end-to-end support—from goal planning and fund
-                            selection to portfolio tracking and periodic reviews. I work with leading Asset
-                            Management.....
-                        </p>
-
-                    </div>
-                    <button class="read-more-btn" onclick="openModal('Mutual')">Read More</button>
-                </div>
-                <!-- Modal Popup for Mutual fund -->
-                <div class="modal" id="modal-Mutual">
-                    <div class="modal-content">
-                        <span class="close-btn" onclick="closeModal('Mutual')">&times;</span>
-                        <h3>Mutual Funds</h3><br>
-                        <p>
-                        <ul>
-                            <li> As a certified Mutual Fund Distributor, I help individuals and families navigate the
-                                world of
-                                investments with confidence and clarity. My mission is to make wealth creation
-                                accessible by
-                                offering well-researched mutual fund solutions tailored to each client's financial
-                                goals,
-                                risk profile, and investment horizon. </li><br>
-                            <li> With a client-first approach, I provide end-to-end support—from goal planning and fund
-                                selection to portfolio tracking and periodic reviews. I work with leading Asset
-                                Management
-                                Companies (AMCs) to offer a wide range of equity, debt, hybrid, and tax-saving mutual
-                                fund
-                                schemes.</li> <br>
-
-                            <li> Whether you're planning for retirement, a child’s education, wealth accumulation, or
-                                simply
-                                looking to grow your savings, I’m here to help you build a diversified and disciplined
-                                investment strategy.</li>
-                        </ul>
-                        <br>
-                        Your financial goals deserve personal attention and expert guidance—and that’s exactly what
-                        I deliver.
-
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="service-box">
-                    <div class="service-info">
-                        <h4>Insurance</h4>
-
-                        <p>I specialize in helping individuals, families, and businesses protect what matters most. With
-                            a deep understanding of insurance products and a commitment to personalized service.....</p>
-                    </div>
-                    <button class="read-more-btn" onclick="openModal('Insurience')">Read More</button>
-                </div>
-                <!-- Modal Popup for Mutual fund -->
-                <div class="modal" id="modal-Insurience">
-                    <div class="modal-content">
-                        <span class="close-btn" onclick="closeModal('Insurience')">&times;</span>
-                        <h3>Insurance</h3><br>
-                        <p>
-                        <ul>
-                            <li>
-                                As a dedicated and licensed insurance agent, I specialize in helping individuals,
-                                families,
-                                and businesses protect what matters most. With a deep understanding of insurance
-                                products
-                                and a commitment to personalized service, I guide my clients through the process of
-                                choosing
-                                the right coverage—whether it's life, health, auto, home, or commercial insurance
-
-                            </li><br>
-                            <li>
-                                I work closely with each client to assess their unique needs and provide tailored
-                                solutions that offer peace of mind and long-term financial security. Whether you’re
-                                looking
-                                for a new policy, need to update existing coverage, or require assistance with a
-                                claim.
-                            </li><br>
-                            <li> Whether you’re just starting to explore insurance options or seeking a trusted
-                                advisor for ongoing support, I’m here to help every step of the way.</li>
-                        </ul>
-                        <br>
-                        I’m here to make the process clear, straightforward, and stress-free.
-                        </p>
-                    </div>
-                </div>
-
-
-                <div class="service-box">
-                    <div class="service-info">
-                        <h4>Portfolio Management</h4>
-                        <p>As a trusted Portfolio Management Services distributor,I specialize in connecting
-                            high-net-worth individuals(HNIs) with...... </p>
-
-                    </div>
-                    <button class="read-more-btn" onclick="openModal('Portfolio')">Read More</button>
-                </div>
-                <!-- Modal Popup for Mutual fund -->
-                <div class="modal" id="modal-Portfolio">
-                    <div class="modal-content">
-                        <span class="close-btn" onclick="closeModal('Portfolio')">&times;</span>
-                        <h3>Portfolio Management</h3><br>
-                        <p>
-                        <ul>
-                            <li> As a trusted Portfolio Management Services (PMS) distributor, I specialize in
-                                connecting high-net-worth individuals (HNIs) with professionally managed investment
-                                portfolios tailored to their financial goals and risk appetite. With a strong foundation
-                                in financial markets and wealth management, I work closely with leading PMS providers to
-                                offer curated investment solutions that align with long-term wealth creation strategies.
-                            </li><br>
-                            <li> My role goes beyond product distribution—I act as a strategic advisor, helping clients
-                                understand various portfolio styles (such as multi-cap, focused, sectoral, or thematic
-                                strategies), assess performance metrics, and make informed decisions. I believe in
-                                maintaining transparency, offering regular updates, and fostering long-term
-                                relationships based on trust and performance.</li> <br>
-
-                            <li> Whether you're seeking growth, capital preservation, or diversification, I provide
-                                access to top-performing PMS offerings and ensure a seamless onboarding and monitoring
-                                experience.</li>
-                        </ul>
-                        <br>
-                        I’m here to make Your Invesment Journey easy and stress-free, and help you to building you good
-                        wealth.
-                        </p>
+                        <!-- Decorative elements -->
+                        <div
+                            class="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full opacity-20 animate-pulse">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 w-16 h-16 bg-blue-400 rounded-full opacity-30 animate-pulse"
+                            style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/2 -right-8 w-12 h-12 bg-purple-400 rounded-full opacity-25 animate-pulse"
+                            style="animation-delay: 2s;"></div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- my SVG animation -->
-        <div class="str">
-            <h2 class="heading">Strength</h2>
-            <section id="skills" class="strength">
-                <div class="container1">
-                    <h1 class="heading1">Technical Skills</h1>
-                    <div class="Technical-bars">
-                        <div class="bar">
-                            <div class="info"><i class="fa-solid fa-chart-line" style="color: #00b894;"></i>
-                                <span>Trading Charts</span>
-                            </div>
-                            <div class="progress-line Charts">
-                                <span></span>
-                            </div>
-                        </div>
-
-                        <div class="bar">
-                            <div class="info"><i class="fa-solid fa-building-columns" style="color: #f5a623;"></i>
-                                <span>Stock Market Insights</span>
-                            </div>
-                            <div class="progress-line Market">
-                                <span></span>
-                            </div>
-                        </div>
-
-                        <div class="bar">
-                            <div class="info"><i class="fa-solid fa-file-excel" style="color: #2ecc71;"></i>
-                                <span>Excel & Sheets</span>
-                            </div>
-                            <div class="progress-line Excel">
-                                <span></span>
-                            </div>
-                        </div>
-
-                        <div class="bar">
-                            <div class="info"><i class="fa-solid fa-database" style="color: #9b59b6;"></i>
-                                <span>Portfolio Analysis</span>
-                            </div>
-                            <div class="progress-line Portfolio">
-                                <span></span>
-                            </div>
-                        </div>
-
-                        <div class="bar">
-                            <div class="info"><i class="fa-solid fa-file-contract" style="color: #f39c12;"></i>
-                                <span>Compliance & Regulations</span>
-                            </div>
-                            <div class="progress-line Regulations">
-                                <span></span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="container1">
-                    <h1 class="heading1">Professional Skills</h1>
-
-                    <div class="radial-bars">
-                        <div class="radial-bar">
-                            <svg x="0px" y="0px" viewBox="0 0 200 200">
-                                <circle class="track" cx="100" cy="100" r="80"></circle>
-                                <circle class="progress path-1" cx="100" cy="100" r="80"></circle>
-                            </svg>
-                            <div class="percentage">90%</div>
-                            <div class="text">Creativity</div>
-                        </div>
-                        <div class="radial-bar">
-                            <svg x="0px" y="0px" viewBox="0 0 200 200">
-                                <circle class="track" cx="100" cy="100" r="80"></circle>
-                                <circle class="progress path-2" cx="100" cy="100" r="80"></circle>
-                            </svg>
-                            <div class="percentage">98%</div>
-                            <div class="text">Communication</div>
-                        </div>
-                        <div class="radial-bar">
-                            <svg x="0px" y="0px" viewBox="0 0 200 200">
-                                <circle class="track" cx="100" cy="100" r="80"></circle>
-                                <circle class="progress path-3" cx="100" cy="100" r="80"></circle>
-                            </svg>
-                            <div class="percentage">88%</div>
-                            <div class="text">Problem Solving</div>
-                        </div>
-                        <div class="radial-bar">
-                            <svg x="0px" y="0px" viewBox="0 0 200 200">
-                                <circle class="track" cx="100" cy="100" r="80"></circle>
-                                <circle class="progress path-4" cx="100" cy="100" r="80"></circle>
-                            </svg>
-                            <div class="percentage">75%</div>
-                            <div class="text">Teamwork</div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
         </div>
-    </div>
-    <!-- contact -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
+    </section>
 
-        <form action="">
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
-                </div>
-                <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="text" placeholder="Subject">
-                </div>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Services Offered</h2>
+                <p class="text-xl text-gray-600">Comprehensive financial solutions backed by 20+ years of expertise</p>
             </div>
 
-            <div class="input-group-2">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message" class="btn">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Financial Advisory -->
+                <div
+                    class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 card-hover border border-blue-200 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-20 h-20 bg-blue-500 rounded-full opacity-10 transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500">
+                    </div>
+                    <div class="text-5xl mb-6 relative z-10">📊</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 relative z-10">Equity
+                        Trading</h3>
+                    <p class="text-gray-600 mb-6 relative z-10 leading-relaxed">Partnered with Angel One for tailored
+                        equity guidance and strategic trading</p>
+                    <ul class="text-sm text-gray-600 space-y-3 relative z-10">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Trading
+                            Charts & Market Trends</li>
+                        <li class="flex items-center"><span
+                                class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Technical Analysis</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Risk
+                            Management</li>
+                        <li class="flex items-center"><span
+                                class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Strategic Guidance</li>
+                    </ul>
+                </div>
+
+                <!-- Stock Market Analysis -->
+                <div
+                    class="bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 card-hover border border-green-200 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-20 h-20 bg-green-500 rounded-full opacity-10 transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500">
+                    </div>
+                    <div class="text-5xl mb-6 relative z-10">📈</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 relative z-10">Mutual Funds Advisory</h3>
+                    <p class="text-gray-600 mb-6 relative z-10 leading-relaxed">From planning to tracking, full-spectrum
+                        mutual fund support and guidance</p>
+                    <ul class="text-sm text-gray-600 space-y-3 relative z-10">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>SIP
+                            Planning</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Fund
+                            Selection</li>
+                        <li class="flex items-center"><span
+                                class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Performance Tracking</li>
+                        <li class="flex items-center"><span
+                                class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Goal-based Investing</li>
+                    </ul>
+                </div>
+
+                <!-- Mutual Funds -->
+                <div
+                    class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 card-hover border border-purple-200 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-20 h-20 bg-purple-500 rounded-full opacity-10 transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500">
+                    </div>
+                    <div class="text-5xl mb-6 relative z-10">💰</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 relative z-10">Portfolio Management</h3>
+                    <p class="text-gray-600 mb-6 relative z-10 leading-relaxed">HNI-focused PMS distribution and
+                        strategic portfolio curation</p>
+                    <ul class="text-sm text-gray-600 space-y-3 relative z-10">
+                        <li class="flex items-center"><span
+                                class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Portfolio Analysis</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Risk
+                            Management</li>
+                        <li class="flex items-center"><span
+                                class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Strategic Curation</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>HNI
+                            Services</li>
+                    </ul>
+                </div>
+
+                <!-- Insurance -->
+                <div
+                    class="bg-gradient-to-br from-red-50 to-red-100 rounded-3xl p-8 card-hover border border-red-200 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-20 h-20 bg-red-500 rounded-full opacity-10 transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500">
+                    </div>
+                    <div class="text-5xl mb-6 relative z-10">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 relative z-10">Insurance Planning</h3>
+                    <p class="text-gray-600 mb-6 relative z-10 leading-relaxed">Personalized coverage for life, health,
+                        and business protection needs</p>
+                    <ul class="text-sm text-gray-600 space-y-3 relative z-10">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>Life
+                            Insurance</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>Health
+                            Coverage</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>Business
+                            Insurance</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>Claims
+                            Support</li>
+                    </ul>
+                </div>
             </div>
-        </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Why Choose Santosh Show?</h2>
+                    <p class="text-lg text-gray-600 mb-8">With over two decades of financial expertise, I specialize in
+                        crafting personalized investment strategies that align with diverse financial goals. Backed by
+                        prestigious certifications and deep market knowledge, I help individuals, families, and HNIs
+                        grow and protect their wealth.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Certified Expertise</h3>
+                                <p class="text-gray-600">Licensed financial advisor with proven track record</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Angel One Partnership</h3>
+                                <p class="text-gray-600">Authorized sub-broker providing seamless trading experience</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 p-2 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Personalized Approach</h3>
+                                <p class="text-gray-600">Tailored strategies based on your unique financial situation
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Quick Stats</h3>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">1000+</div>
+                            <div class="text-gray-600">Happy Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">₹100Cr+</div>
+                            <div class="text-gray-600">Assets Managed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600">20+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-600">CFP</div>
+                            <div class="text-gray-600">Certified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Credentials & Certifications</h2>
+                <p class="text-xl text-gray-600">Strong academic foundation with prestigious financial certifications
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Timeline -->
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div
+                        class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500">
+                    </div>
+
+                    <!-- Education Items -->
+                    <div class="space-y-12">
+                        <!-- CFP Certification -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                                    <div class="text-blue-600 font-bold text-lg mb-2">2021</div>
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Certified Financial Planner™
+                                        (CFP)</h3>
+                                    <p class="text-gray-600 mb-3">Financial Planning Standards Board India</p>
+                                    <div class="text-sm text-gray-500">
+                                        <p>• Comprehensive financial planning</p>
+                                        <p>• Investment planning & analysis</p>
+                                        <p>• Risk management & insurance</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="w-8 h-8 bg-blue-500 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- MBA -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div
+                                class="w-8 h-8 bg-green-500 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                                    <div class="text-green-600 font-bold text-lg mb-2">2012</div>
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">CPFA - Personal Financial
+                                        Advisor</h3>
+                                    <p class="text-gray-600 mb-3">Certified Personal Financial Advisor</p>
+                                    <div class="text-sm text-gray-500">
+                                        <p>• Personal financial advisory</p>
+                                        <p>• Client suitability assessment</p>
+                                        <p>• Financial product knowledge</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NISM Certifications -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                                    <div class="text-purple-600 font-bold text-lg mb-2">Multiple Years</div>
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">NISM & NSE Certifications</h3>
+                                    <p class="text-gray-600 mb-3">National Institute of Securities Markets & NSE</p>
+                                    <div class="text-sm text-gray-500">
+                                        <p>• Commodities & Derivatives</p>
+                                        <p>• Capital Markets & Mutual Funds</p>
+                                        <p>• Currency & Investment Advisory</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="w-8 h-8 bg-purple-500 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+
+                        <!-- Bachelor's Degree -->
+                        <div class="flex items-center">
+                            <div class="w-1/2 pr-8"></div>
+                            <div
+                                class="w-8 h-8 bg-red-500 rounded-full border-4 border-white shadow-lg z-10 flex items-center justify-center">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                            <div class="w-1/2 pl-8">
+                                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                                    <div class="text-red-600 font-bold text-lg mb-2">2014 - 2017</div>
+                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Bachelor of Commerce (B.Com)
+                                    </h3>
+                                    <p class="text-gray-600 mb-3">Accounting & Finance - Delhi University</p>
+                                    <div class="text-sm text-gray-500">
+                                        <p>• Financial Accounting & Auditing</p>
+                                        <p>• Business Economics & Statistics</p>
+                                        <p>• Banking & Insurance Fundamentals</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Professional Skills</h2>
+                <p class="text-xl text-gray-600">Expertise across financial planning, analysis, and client management
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Technical Skills -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Technical Expertise</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-2xl p-6 modern-shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gray-800 text-lg">Financial Planning & Analysis</span>
+                                <span class="text-blue-600 font-bold text-xl">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar h-4 rounded-full relative overflow-hidden"
+                                    style="width: 95%; --start-color: #3b82f6; --end-color: #1d4ed8;">
+                                    <div class="absolute inset-0 bg-white opacity-30 animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 modern-shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gray-800 text-lg">Stock Market Analysis</span>
+                                <span class="text-green-600 font-bold text-xl">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar h-4 rounded-full relative overflow-hidden"
+                                    style="width: 90%; --start-color: #10b981; --end-color: #047857;">
+                                    <div class="absolute inset-0 bg-white opacity-30 animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 modern-shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gray-800 text-lg">Portfolio Management</span>
+                                <span class="text-purple-600 font-bold text-xl">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar h-4 rounded-full relative overflow-hidden"
+                                    style="width: 92%; --start-color: #8b5cf6; --end-color: #6d28d9;">
+                                    <div class="absolute inset-0 bg-white opacity-30 animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 modern-shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gray-800 text-lg">Risk Assessment</span>
+                                <span class="text-red-600 font-bold text-xl">88%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar h-4 rounded-full relative overflow-hidden"
+                                    style="width: 88%; --start-color: #ef4444; --end-color: #dc2626;">
+                                    <div class="absolute inset-0 bg-white opacity-30 animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 modern-shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gray-800 text-lg">Insurance Planning</span>
+                                <span class="text-indigo-600 font-bold text-xl">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar h-4 rounded-full relative overflow-hidden"
+                                    style="width: 85%; --start-color: #6366f1; --end-color: #4f46e5;">
+                                    <div class="absolute inset-0 bg-white opacity-30 animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 modern-shadow">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gray-800 text-lg">Tax Planning</span>
+                                <span class="text-yellow-600 font-bold text-xl">87%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar h-4 rounded-full relative overflow-hidden"
+                                    style="width: 87%; --start-color: #eab308; --end-color: #ca8a04;">
+                                    <div class="absolute inset-0 bg-white opacity-30 animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills & Tools -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Core Competencies</h3>
+
+                    <!-- Soft Skills -->
+                    <div class="mb-8">
+                        <h4 class="text-lg font-medium text-gray-700 mb-4">Client Management</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <div class="text-2xl mb-2">🤝</div>
+                                <div class="font-medium text-gray-800">Relationship Building</div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <div class="text-2xl mb-2">💬</div>
+                                <div class="font-medium text-gray-800">Communication</div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <div class="text-2xl mb-2">🎯</div>
+                                <div class="font-medium text-gray-800">Goal Setting</div>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <div class="text-2xl mb-2">📊</div>
+                                <div class="font-medium text-gray-800">Data Analysis</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div>
+                        <h4 class="text-lg font-medium text-gray-700 mb-4">Tools & Platforms</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between bg-white rounded-lg p-4 shadow-md">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-blue-600 font-bold">A1</span>
+                                    </div>
+                                    <span class="font-medium text-gray-800">Angel One Platform</span>
+                                </div>
+                                <span class="text-green-600 font-semibold">Expert</span>
+                            </div>
+
+                            <div class="flex items-center justify-between bg-white rounded-lg p-4 shadow-md">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-green-600 font-bold">📈</span>
+                                    </div>
+                                    <span class="font-medium text-gray-800">Bloomberg Terminal</span>
+                                </div>
+                                <span class="text-green-600 font-semibold">Advanced</span>
+                            </div>
+
+                            <div class="flex items-center justify-between bg-white rounded-lg p-4 shadow-md">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-purple-600 font-bold">📊</span>
+                                    </div>
+                                    <span class="font-medium text-gray-800">Financial Modeling</span>
+                                </div>
+                                <span class="text-green-600 font-semibold">Expert</span>
+                            </div>
+
+                            <div class="flex items-center justify-between bg-white rounded-lg p-4 shadow-md">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                                        <span class="text-red-600 font-bold">💼</span>
+                                    </div>
+                                    <span class="font-medium text-gray-800">CRM Systems</span>
+                                </div>
+                                <span class="text-blue-600 font-semibold">Proficient</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Get Started Today</h2>
+                <p class="text-xl text-gray-600">Schedule your free consultation and take the first step towards
+                    financial success</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Phone</div>
+                                <div class="text-gray-600">+91 9899999099</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Email</div>
+                                <div class="text-gray-600">santosh@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-lg">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-800">Office</div>
+                                <div class="text-gray-600">Business District, Purba Burdhaman</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-blue-50 rounded-lg">
+                        <h4 class="font-semibold text-gray-800 mb-2">Angel One Partnership</h4>
+                        <p class="text-gray-600 text-sm">Authorized sub-broker providing seamless trading and investment
+                            services through Angel One platform.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 modern-shadow border border-gray-100">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Schedule Consultation</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">Full Name</label>
+                                <input type="text"
+                                    class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-gray-50 focus:bg-white"
+                                    placeholder="Enter your full name">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">Email Address</label>
+                                <input type="email"
+                                    class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-gray-50 focus:bg-white"
+                                    placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">Phone Number</label>
+                                <input type="tel"
+                                    class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-gray-50 focus:bg-white"
+                                    placeholder="Enter your phone number">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-3">Service Interest</label>
+                                <select
+                                    class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-gray-50 focus:bg-white">
+                                    <option>Financial Advisory</option>
+                                    <option>Stock Market Analysis</option>
+                                    <option>Mutual Fund Services</option>
+                                    <option>Life & Health Insurance</option>
+                                    <option>Complete Financial Planning</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-3">Message</label>
+                            <textarea rows="5"
+                                class="w-full px-6 py-4 border-2 border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-gray-50 focus:bg-white resize-none"
+                                placeholder="Tell us about your financial goals and how we can help you..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full gradient-bg text-white py-5 rounded-2xl font-bold text-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105 modern-shadow">
+                            Schedule Free Consultation 🚀
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="social">
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">💼 Santosh Show</div>
+                    <p class="text-gray-400">Your trusted partner for comprehensive financial solutions and wealth
+                        management.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Financial Advisory</li>
+                        <li>Stock Market Analysis</li>
+                        <li>Mutual Fund Services</li>
+                        <li>Life & Health Insurance</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Santosh Show. All rights reserved. | Certified Financial Advisor | Angel One Sub-Broker
+                </p>
+            </div>
         </div>
-        <ul class="list">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Testimonial</a></li>
-        </ul>
-
-        <p class="copyright">©️ Santosh Show | All Rights Reserved</p>
-
     </footer>
 
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 
 </html>
